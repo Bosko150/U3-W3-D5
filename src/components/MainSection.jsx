@@ -1,9 +1,19 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
-import { fetchGenre, fetchHiphop, fetchPop, fetchRock, AddToFavorites, RemoveFromFavorites } from "../redux/actions";
+import {
+  fetchGenre,
+  fetchHiphop,
+  fetchPop,
+  fetchRock,
+  AddToFavorites,
+  RemoveFromFavorites,
+  playSong,
+} from "../redux/actions";
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
+
 import { useState } from "react";
 
 const MainSection = () => {
@@ -48,7 +58,9 @@ const MainSection = () => {
           <Row className="mt-5">
             <Col xs={10}>
               <div id="searchedSongs">
-                <h2 className="text-white">Search Results for {searchResults}</h2>
+                <h2 className="text-white">
+                  Search Results for {searchResults.charAt(0).toUpperCase() + searchResults.slice(1)}
+                </h2>
                 <Row
                   className="row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
                   id="searchedSongsSection"
@@ -63,6 +75,7 @@ const MainSection = () => {
                             <br />
                             Artist: {song.artist.name}
                           </p>
+                          <FaPlay className="text-white me-3" onClick={() => dispatch(playSong(song))} />
                           {favoriteSongs.includes(song.id) ? (
                             <FaHeart className="text-success" onClick={() => dispatch(RemoveFromFavorites(song.id))} />
                           ) : (
@@ -92,6 +105,7 @@ const MainSection = () => {
                           <br />
                           Artist: {song.artist.name}
                         </p>
+                        <FaPlay className="text-white me-3" onClick={() => dispatch(playSong(song))} />
                         {favoriteSongs.includes(song.id) ? (
                           <FaHeart className="text-success" onClick={() => dispatch(RemoveFromFavorites(song.id))} />
                         ) : (
@@ -119,6 +133,7 @@ const MainSection = () => {
                           <br />
                           Artist: {song.artist.name}
                         </p>
+                        <FaPlay className="text-white me-3" onClick={() => dispatch(playSong(song))} />
                         {favoriteSongs.includes(song.id) ? (
                           <FaHeart className="text-success" onClick={() => dispatch(RemoveFromFavorites(song.id))} />
                         ) : (
@@ -146,6 +161,7 @@ const MainSection = () => {
                           <br />
                           Artist: {song.artist.name}
                         </p>
+                        <FaPlay className="text-white me-3" onClick={() => dispatch(playSong(song))} />
                         {favoriteSongs.includes(song.id) ? (
                           <FaHeart className="text-success" onClick={() => dispatch(RemoveFromFavorites(song.id))} />
                         ) : (

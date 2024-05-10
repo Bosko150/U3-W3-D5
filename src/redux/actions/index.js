@@ -4,6 +4,7 @@ export const GET_HIPHOP = "GET_HIPHOP";
 export const ADD_TO_FAVORITES = "ADD_TO_FAVORITES";
 export const REMOVE_FROM_FAVORITES = "REMOVE_FROM_FAVORITES";
 export const SET_SEARCH_INPUT = "SET_SEARCH_INPUT";
+export const PLAY_SONG = "PLAY_SONG";
 
 export const fetchPop = (data) => ({ type: GET_POP, payload: data });
 
@@ -16,6 +17,11 @@ export const AddToFavorites = (song) => ({ type: ADD_TO_FAVORITES, payload: song
 export const RemoveFromFavorites = (song) => ({ type: REMOVE_FROM_FAVORITES, payload: song });
 
 export const getSearchInput = (searchvalue) => ({ type: SET_SEARCH_INPUT, payload: searchvalue });
+
+export const playSong = (song) => ({
+  type: PLAY_SONG,
+  payload: song,
+});
 
 export const fetchGenre = (artist, genre) => {
   return (dispatch) => {
