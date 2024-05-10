@@ -59,7 +59,7 @@ const MainSection = () => {
                         <Col key={index} className="text-center py-2">
                           <img className="img-fluid" src={song.album.cover_medium} alt="track" />
                           <p>
-                            Track: {song.id}
+                            Track: {song.title}
                             <br />
                             Artist: {song.artist.name}
                           </p>
@@ -88,7 +88,7 @@ const MainSection = () => {
                       <Col key={index} className="text-center">
                         <img className="img-fluid" src={song.album.cover_medium} alt="track" />
                         <p>
-                          Track: {song.id}
+                          Track: {song.title}
                           <br />
                           Artist: {song.artist.name}
                         </p>
@@ -115,7 +115,7 @@ const MainSection = () => {
                       <Col key={index} className="text-center">
                         <img className="img-fluid" src={song.album.cover_medium} alt="track" />
                         <p>
-                          Track: {song.id}
+                          Track: {song.title}
                           <br />
                           Artist: {song.artist.name}
                         </p>
@@ -142,7 +142,7 @@ const MainSection = () => {
                       <Col key={index} className="text-center">
                         <img className="img-fluid" src={song.album.cover_medium} alt="track" />
                         <p>
-                          Track: {song.id}
+                          Track: {song.title}
                           <br />
                           Artist: {song.artist.name}
                         </p>
